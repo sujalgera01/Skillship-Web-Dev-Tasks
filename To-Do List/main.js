@@ -1,12 +1,11 @@
+// INCOMPLETE
+
 const input = document.querySelector('input');
-const inputcontainer = document.querySelector('.input-container > button');
+const btn = document.querySelector('.input-container > button');
 
-inputcontainer.addEventListener('click',addList);
-input.addEventListener('keyup',(e)=>{
-	(e.keyCode === 13 ? addList(e) : null);
-})
+btn.addEventListener('click',add);
 
-function addList(e){
+function add(e){
 	const incomplete = document.querySelector('.incomplete');
 	const Complete = document.querySelector('.Complete');
 
@@ -24,17 +23,5 @@ function addList(e){
 		newLi.appendChild(checkbtn);
 		newLi.appendChild(delbtn);
 	}
-
-	checkbtn.addEventListener('click',function(){
-		const parent = this.parentNode;
-		parent.remove();
-		Complete.appendChild(parent);
-		checkbtn.style.display = 'none';
-	});
-
-	delbtn.addEventListener('click',function(){
-		const parent = this.parentNode;
-		parent.remove();
-	});
 
 }	
